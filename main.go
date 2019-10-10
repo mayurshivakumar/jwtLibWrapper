@@ -7,7 +7,6 @@ import (
 
 func main() {
 	http.HandleFunc("/login", Login)
-	home := http.HandlerFunc(Home)
-	http.Handle("/home", isAuthorized(home))
+	http.HandleFunc("/home", isAuthorized(Home))
 	log.Fatal(http.ListenAndServe(":8001", nil))
 }
