@@ -49,7 +49,7 @@ func Home(w http.ResponseWriter, r *http.Request) {
 }
 
 // isAuthorized ...
-func isAuthorized(endpoint http.Handler) http.Handler {
+func isAuthorized(endpoint http.HandlerFunc) http.HandlerFunc {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		c, err := r.Cookie("token")
 		if err != nil {
