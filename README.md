@@ -1,4 +1,4 @@
-This is a sample code for using JWT. 
+This wrapper code for using JWT library. 
 
 1) First hit the Login in end point 
 2) Then hit home end point . Else will get unauthorized. 
