@@ -71,6 +71,10 @@ func isAuthorized(endpoint http.HandlerFunc) http.HandlerFunc {
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
+		if !valid {
+				w.WriteHeader(http.StatusUnauthorized)
+				return
+			}
 
 		endpoint.ServeHTTP(w, r)
 	})
